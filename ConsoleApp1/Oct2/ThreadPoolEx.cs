@@ -14,20 +14,18 @@ namespace ConsoleApp1.Oct2
             // Queue some tasks to the thread pool
             for (int i = 0; i < 5; i++)
             {
-                ThreadPool.QueueUserWorkItem(DoWork, i);
+                ThreadPool.QueueUserWorkItem(Process, i);
             }
 
-            // Wait for the tasks to complete (just for demonstration purposes)
             Thread.Sleep(1000);
 
             Console.WriteLine("All tasks have completed.");
         }
 
-        static void DoWork(object state)
+        static void Process(object state)
         {
             int taskId = (int)state;
             Console.WriteLine($"Task {taskId} is running on Thread {Thread.CurrentThread.ManagedThreadId}");
-            // Perform some work here
         }
     }
 }
