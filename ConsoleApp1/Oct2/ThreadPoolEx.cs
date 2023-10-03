@@ -24,8 +24,9 @@ namespace ConsoleApp1.Oct2
 
         static void Process(object state)
         {
+            Thread th = Thread.CurrentThread;
             int taskId = (int)state;
-            Console.WriteLine($"Task {taskId} is running on Thread {Thread.CurrentThread.ManagedThreadId}");
+            Console.WriteLine($"Background Thread : {th.IsBackground}, Task {taskId} is running on Thread {th.ManagedThreadId}");
         }
     }
 }
