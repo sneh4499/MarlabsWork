@@ -19,7 +19,7 @@ namespace ConsoleApp1.Oct2
 
             Thread.Sleep(1000);
 
-            Console.WriteLine("All tasks have completed.");
+            Console.WriteLine("All tasks have been completed.");
         }
 
         static void Process(object state)
